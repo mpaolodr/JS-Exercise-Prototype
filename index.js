@@ -90,13 +90,22 @@ Car.prototype.drive = function(distance) {
   //this.tank === 0, this.odometer = 0
   //return `I ran out of fuel at ${this.odometer} miles`
 
-  if (this.tank > 0) {
+  // if (this.tank > 0) {
+  //   this.odometer += distance;
+  //   this.tank = this.odometer / this.milesPerGallon;
+  // } else {
+  //   this.odometer = 0;
+  //   this.tank = 0;
+  //   return `I ran out of fuel at ${this.odometer} miles`;
+  // }
+
+  if (distance > this.tank * this.milesPerGallon) {
+    this.odometer = this.tank * this.milesPerGallon;
+    this.tank = 0;
+    return `I ran out of fuel at ${this.odometer} miles!`;
+  } else if (distance < this.tank * this.milesPerGallon) {
     this.odometer += distance;
     this.tank = this.odometer / this.milesPerGallon;
-  } else {
-    this.odometer = 0;
-    this.tank = 0;
-    return `I ran out of fuel at ${this.odometer} miles`;
   }
 };
 
@@ -124,7 +133,7 @@ Baby.prototype.play = function() {
   In your own words explain the four principles for the "this" keyword below:
   1. "this" when declared in global scope, will refer to window object. 
   2. "this" when used inside an object will refer to the object.
-  3. "this" when used with bind, call, and apply will refer to the object, which is the first argument given to bind, cal, or apply. 
+  3. "this" when used with bind, call, and apply will refer to the object, which is the first argument given to bind, call, or apply. 
   4. "this" in new binding will refer to the NEW INSTANCE or NEW OBJECT created by constructor function
 */
 
