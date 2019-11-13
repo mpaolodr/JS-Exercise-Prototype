@@ -122,10 +122,10 @@ Baby.prototype.play = function() {
   TASK 4
 
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. "this" when declared in global scope, will refer to window object. 
+  2. "this" when used inside an object will refer to the object.
+  3. "this" when used with bind, call, and apply will refer to the object, which is the first argument given to bind, cal, or apply. 
+  4. "this" in new binding will refer to the NEW INSTANCE or NEW OBJECT created by constructor function
 */
 
 ///////// END OF CHALLENGE /////////
